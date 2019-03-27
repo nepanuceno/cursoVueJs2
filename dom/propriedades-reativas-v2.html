@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p>{{ titulo }}</p>
+    <input type="text"  v-model="titulo">
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="diminuir">Diminuir</button>
+    <p>{{ contador }}</p>
+    <p>{{ resultado }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            contador:0
+        },
+        methods:{
+            aumentar(){
+                this.contador++
+               this.resultado =  this.contador >= 5 ? "Maior que 5" : "Menor ou igual que 5"
+            },
+            diminuir(){
+                this.contador--
+                this.resultado = this.contador >= 5 ? "Maior que 5" : "Menor ou igual que 5"
+            }
+        }
+    })
+</script>
